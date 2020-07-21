@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拖拽</title>
+    <style>
+        body {
+            position: relative;
+        }
+        .box{
+            width: 400px;
+            height: 400px;
+            background-color: yellow;
+            position: absolute;
+            left: 40%;
+            top: 300px;
+        }
+        .one {
+            width: 200px;
+            height: 200px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="one">
+
+
+        </div>
+    </div>
+    <script src="drag.js"></script>
+    <script>
+
+        var drag = new drag(".one");
+        // drag.y = true;       
+        drag.move();
+        this.sidex = [0,200];
+        this.sidey = [0,200];
+  
+        drag.side.x1= this.sidex[0];
+        drag.side.y1 = this.sidey[0];
+        drag.side.x2 = this.sidex[1];
+        drag.side.y2 = this.sidey[1];
+        // var side = ["0","400","0","400"];
+
+        // drag.side = side.toString();
+    </script>
+
+    <!-- <script>
+        var div = document.querySelector("div")
+        console.log(div)
+        div.onmousedown = function(ev){
+            var a = ev.offsetX;
+            var b = ev.offsetY;
+            document.onmousemove = function(ev){
+                
+                div.style.left = ev.clientX-a + "px";
+                div.style.top = ev.clientY-b
+                 + "px";     
+            }
+            document.onmouseup = function(ev){
+               document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        }
+    </script> -->
+</body>
+
+</html>

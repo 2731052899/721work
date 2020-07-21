@@ -13,7 +13,7 @@ drag.prototype = {
     move(){
         var that = this;
         console.log(that.side)
-        this.set.onmousedown = function(ev){
+        this.set.onmouseover = function(ev){
             var cx = ev.clientX;
             var cy = ev.clientY;
             var ox = that.set.offsetLeft;
@@ -64,6 +64,6 @@ drag.prototype = {
     } ,
     
     big(){
-
+        
     }
 }
