@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米巨能写</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            top: 50px;
+            left: 15%;
+            width: 900px;
+            height: 600px;
+            background: rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .left {
+
+
+            width: 418px;
+            height: 418px;
+            /* overflow: hidden; */
+            /* overflow: hidden; */
+            /* background: rgba(255, 0, 0, 0.5 */
+        }
+
+        .left .img {
+
+            width: 100%;
+            height: 418px;
+
+        }
+
+        .img img {
+            width: 418px;
+            height: 418px;
+            margin-left: 0;
+            position: absolute;
+            top: 0;
+            /* display: none; */
+        }
+
+        .left:hover .slider {
+            display: block;
+        }
+
+        .slider {
+            width: 230px;
+            height: 230px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+            background: rgba(146, 146, 146, 0.5);
+        }
+
+        .bottom {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            width: 418px;
+            height: 80px;
+            margin: 0 auto;
+        }
+
+        .bottom img {
+            width: 60px;
+            height: 60px;
+            margin: 0 9px;
+            float: left;
+
+        }
+
+        .bottom img:hover {
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+            border: 2px solid red;
+
+        }
+
+        .right {
+            position: absolute;
+            left: 450px;
+            top: 0;
+            overflow: hidden;
+            width: 418px;
+            height: 418px;
+            float: right;
+        }
+
+        .right img {
+            width: 200%;
+        }
+        .message{
+            width: 400px;
+            height: 400px;
+            background: url(./img/timg\ \(3\).jpg);
+            position: absolute;
+            right: 200px; 
+            top: 200px;
+          
+        }
+        .message span:first-child{
+            font-size: 30px;
+            color: greenyellow;
+        }
+        .message span:last-child{
+            display: block;
+            margin-top: 30px;
+            font-size: 30px;
+            color: rgb(163, 33, 33);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="left">
+            <div class="img">
+                <div class="img1"><img src="./img/l1.jpg" alt=""></div>
+                <div class="img1"><img src="./img/l2.jpg" alt=""></div>
+                <div class="img1"><img src="./img/l3.jpg" alt=""></div>
+                <div class="img1"><img src="./img/l4.jpg" alt=""></div>
+                <div class="img1"><img src="./img/l5.jpg" alt=""></div>
+            </div>
+            <div class="slider"></div>
+          
+        </div>
+        <div class="bottom">
+            <div class="bottom1"><img src="./img/1.jpg" alt=""></div>
+            <div class="bottom1"><img src="./img/2.jpg" alt=""></div>
+            <div class="bottom1"><img src="./img/3.jpg" alt=""></div>
+            <div class="bottom1"><img src="./img/4.jpg" alt=""></div>
+            <div class="bottom1"><img src="./img/5.jpg" alt=""></div>
+        </div>
+        <div class="right">
+            <div class="right1"><img src="./img/l1.jpg" alt=""></div>
+            <div class="right1"><img src="./img/l2.jpg" alt=""></div>
+            <div class="right1"> <img src="./img/l3.jpg" alt=""></div>
+            <div class="right1"> <img src="./img/l4.jpg" alt=""></div>
+            <div class="right1"> <img src="./img/l5.jpg" alt=""></div>
+        </div>
+
+    </div>
+    <div class="message">
+        <span>big[num].style.display = "block"</span>
+        <br>
+        <span>message: 
+        Uncaught TypeError: Cannot read property 'style' of undefined
+            </span>
+    </div>
+    <script src="../7.16/wheel.js"></script>
+    <script src="drag.js"></script>
+    <script>
+        window.onload = function () {
+            var mid = document.querySelectorAll('.img img');
+            var big = document.querySelectorAll('.right img');
+            var imgs = document.querySelectorAll('.bottom img');
+           console.log(imgs);
+            for (var i = 0; i < imgs.length; i++) {
+                    imgs[i].onmouseover = function () {
+                        var num  = i;
+                    for(var j = 0;j < big.length ;j++){
+                          
+                        big[num].style.display = "block"
+                    }
+                      
+                }
+            }
+        }
+
+
+
+
+
+    </script>
+    <script>
+
+        var drag = new drag(".slider");
+        // drag.y = true;       
+        drag.move();
+        this.sidex = [0, 188];
+        this.sidey = [0, 188];
+
+        drag.side.x1 = this.sidex[0];
+        drag.side.y1 = this.sidey[0];
+        drag.side.x2 = this.sidex[1];
+        drag.side.y2 = this.sidey[1];
+        // var side = ["0","400","0","400"];
+
+        // drag.side = side.toString();
+    </script>
+</body>
+
+</html>
